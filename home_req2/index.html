@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr.js"></script>
+  	<script>
+		 var  count = 0
+	  </script>
+	<title>News | HydrosLab IITTP</title>
+</head>
+<body onload="f1()">
+	<script>
+		function f1()
+		{
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() 
+		  {
+			if (this.readyState == 4 && this.status == 200) 
+            {
+              var news = JSON.parse(this.responseText).message 
+              var doop = news.articles
+              var length = doop.totalResults
+              console.log(doop)
+			  console.log(doop[0])
+              var c = 0
+              for(c=0;c<doop.length;c++)
+              {
+				  console.log(doop[c].title)
+  if(doop[c].title.includes('Weather forecast') || doop[c].title.includes('weather forecast') || 
+  doop[c].title.includes('Weather') || doop[c].title.includes('weather') || 
+  doop[c].title.includes('flood risks') || doop[c].title.includes('Flood risks') || 
+  doop[c].title.includes('Floods') || doop[c].title.includes('floods') || 
+  doop[c].title.includes('reservoir') || doop[c].title.includes('Reservoirs') || 
+  doop[c].title.includes('climate change') || doop[c].title.includes('Climate change') || 
+  doop[c].title.includes('irrigation') || doop[c].title.includes('Irrigation') || 
+  doop[c].title.includes('rainfall') || doop[c].title.includes('Rainfall') || 
+  doop[c].title.includes('precipitation') || doop[c].title.includes('Precipitation') || 
+  doop[c].title.includes('Global Climate Models') || doop[c].title.includes('global climate models') || doop[c].title.includes('Global climate models') || 
+  doop[c].title.includes('greenhouse gases') || doop[c].title.includes('Greenhouse gases') || 
+  doop[c].title.includes('urban flood water management') || doop[c].title.includes('Urban flood water management') || 
+  doop[c].title.includes('Flood water management') || doop[c].title.includes('flood water management') || 
+  doop[c].title.includes('water management') || doop[c].title.includes('Water management') || 
+  doop[c].title.includes('cloud burst dam break') || doop[c].title.includes('Cloud burst dam break') || 
+  doop[c].title.includes('urban flooding') || doop[c].title.includes('Urban flooding') || 
+  doop[c].title.includes('flash floods') || doop[c].title.includes('Flash floods') || 
+  doop[c].title.includes('agricultural drought') || doop[c].title.includes('Agricultural drought') || 
+  doop[c].title.includes('flood control') || doop[c].title.includes('Flood control') || 
+  doop[c].title.includes('cloud seeding') || doop[c].title.includes('Cloud seeding') || 
+  doop[c].title.includes('El nino') || doop[c].title.includes('el nino') || 
+  doop[c].title.includes('La Nina') || doop[c].title.includes('La Nina') || 
+  doop[c].title.includes('remote sensing') || doop[c].title.includes('Remote sensing') || 
+  doop[c].title.includes('rainfall forecasting') || doop[c].title.includes('Rainfall forecasting') || 
+  doop[c].title.includes('atmospheric circulation') || doop[c].title.includes('Atmospheric circulation') || 
+  doop[c].title.includes('atmospheric circumstances') || doop[c].title.includes('Atmospheric circumstances') || 
+  doop[c].title.includes('NDVI'))
+                {
+                  if(count > 9)
+                  {
+                    break;
+                  }
+                  else
+                  {
+					count = count  + 1
+					console.log('count:')
+					console.log(count)
+					var aa = 't' + count.toString()
+					var bb = 't' + count.toString()
+					var cc = 't' + count.toString()
+					document.getElementById('t' + count.toString()).innerHTML = doop[c].title;
+                    document.getElementById('l' + count.toString()).href = doop[c].url;
+                    document.getElementById('i' + count.toString()).src = doop[c].urlToImage;
+                   }
+                }
+              }
+			  if(count < 10)
+			  {
+				  f2();
+			  }
+          }
+		  };
+          xhttp.open("POST", "https://powerful-river-87843.herokuapp.com/", true);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          var str = "hi"
+          console.log(str);
+          xhttp.send('link='+str);
+        }
+		function f2()
+		{
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() 
+		  {
+			if (this.readyState == 4 && this.status == 200) 
+            {
+              var news = JSON.parse(this.responseText).message 
+              var doop = news.articles
+              var length = doop.totalResults
+              console.log(doop)
+			  console.log(doop[0])
+              var c = 0
+              for(c=0;c<doop.length;c++)
+              {
+				  console.log(doop[c].title)
+  if(doop[c].title.includes('Weather forecast') || doop[c].title.includes('weather forecast') || 
+  doop[c].title.includes('flood risks') || doop[c].title.includes('Flood risks') || 
+  doop[c].title.includes('Weather') || doop[c].title.includes('weather') || 
+  doop[c].title.includes('Floods') || doop[c].title.includes('floods') || 
+  doop[c].title.includes('reservoir') || doop[c].title.includes('Reservoirs') || 
+  doop[c].title.includes('climate change') || doop[c].title.includes('Climate change') || 
+  doop[c].title.includes('irrigation') || doop[c].title.includes('Irrigation') || 
+  doop[c].title.includes('rainfall') || doop[c].title.includes('Rainfall') || 
+  doop[c].title.includes('precipitation') || doop[c].title.includes('Precipitation') || 
+  doop[c].title.includes('Global Climate Models') || doop[c].title.includes('global climate models') || doop[c].title.includes('Global climate models') || 
+  doop[c].title.includes('greenhouse gases') || doop[c].title.includes('Greenhouse gases') || 
+  doop[c].title.includes('urban flood water management') || doop[c].title.includes('Urban flood water management') || 
+  doop[c].title.includes('Flood water management') || doop[c].title.includes('flood water management') || 
+  doop[c].title.includes('water management') || doop[c].title.includes('Water management') || 
+  doop[c].title.includes('cloud burst dam break') || doop[c].title.includes('Cloud burst dam break') || 
+  doop[c].title.includes('urban flooding') || doop[c].title.includes('Urban flooding') || 
+  doop[c].title.includes('flash floods') || doop[c].title.includes('Flash floods') || 
+  doop[c].title.includes('agricultural drought') || doop[c].title.includes('Agricultural drought') || 
+  doop[c].title.includes('flood control') || doop[c].title.includes('Flood control') || 
+  doop[c].title.includes('cloud seeding') || doop[c].title.includes('Cloud seeding') || 
+  doop[c].title.includes('El nino') || doop[c].title.includes('el nino') || 
+  doop[c].title.includes('La Nina') || doop[c].title.includes('La Nina') || 
+  doop[c].title.includes('remote sensing') || doop[c].title.includes('Remote sensing') || 
+  doop[c].title.includes('rainfall forecasting') || doop[c].title.includes('Rainfall forecasting') || 
+  doop[c].title.includes('atmospheric circulation') || doop[c].title.includes('Atmospheric circulation') || 
+  doop[c].title.includes('atmospheric circumstances') || doop[c].title.includes('Atmospheric circumstances') || 
+  doop[c].title.includes('NDVI'))
+                {
+                  if(count > 9)
+                  {
+                    break;
+                  }
+                  else
+                  {
+					count = count  + 1
+					console.log('count:')
+					console.log(count)
+					var aa = 't' + count.toString()
+					var bb = 't' + count.toString()
+					var cc = 't' + count.toString()
+                    document.getElementById('t' + count.toString()).innerHTML = doop[c].title;
+                    document.getElementById('l' + count.toString()).href = doop[c].url;
+                    document.getElementById('i' + count.toString()).src = doop[c].urlToImage;
+                  }
+                }
+              }
+			  if(count < 10)
+			  {
+				  f3();
+			  }
+          }
+		  };
+          xhttp.open("POST", "https://powerful-thicket-24847.herokuapp.com/", true);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          var str = "hi"
+          console.log(str);
+          xhttp.send('link='+str);
+        }
+		function f3()
+		{
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() 
+		  {
+			if (this.readyState == 4 && this.status == 200) 
+            {
+              var news = JSON.parse(this.responseText).message 
+              var doop = news.articles
+              var length = doop.totalResults
+              console.log(doop)
+			  console.log(doop[0])
+              var c = 0
+              for(c=0;c<doop.length;c++)
+              {
+				  console.log(doop[c].title)
+  if(doop[c].title.includes('Weather forecast') || doop[c].title.includes('weather forecast') || 
+  doop[c].title.includes('Weather') || doop[c].title.includes('weather') || 
+  doop[c].title.includes('flood risks') || doop[c].title.includes('Flood risks') || 
+  doop[c].title.includes('Floods') || doop[c].title.includes('floods') || 
+  doop[c].title.includes('reservoir') || doop[c].title.includes('Reservoirs') || 
+  doop[c].title.includes('climate change') || doop[c].title.includes('Climate change') || 
+  doop[c].title.includes('irrigation') || doop[c].title.includes('Irrigation') || 
+  doop[c].title.includes('rainfall') || doop[c].title.includes('Rainfall') || 
+  doop[c].title.includes('precipitation') || doop[c].title.includes('Precipitation') || 
+  doop[c].title.includes('Global Climate Models') || doop[c].title.includes('global climate models') || doop[c].title.includes('Global climate models') || 
+  doop[c].title.includes('greenhouse gases') || doop[c].title.includes('Greenhouse gases') || 
+  doop[c].title.includes('urban flood water management') || doop[c].title.includes('Urban flood water management') || 
+  doop[c].title.includes('Flood water management') || doop[c].title.includes('flood water management') || 
+  doop[c].title.includes('water management') || doop[c].title.includes('Water management') || 
+  doop[c].title.includes('cloud burst dam break') || doop[c].title.includes('Cloud burst dam break') || 
+  doop[c].title.includes('urban flooding') || doop[c].title.includes('Urban flooding') || 
+  doop[c].title.includes('flash floods') || doop[c].title.includes('Flash floods') || 
+  doop[c].title.includes('agricultural drought') || doop[c].title.includes('Agricultural drought') || 
+  doop[c].title.includes('flood control') || doop[c].title.includes('Flood control') || 
+  doop[c].title.includes('cloud seeding') || doop[c].title.includes('Cloud seeding') || 
+  doop[c].title.includes('El nino') || doop[c].title.includes('el nino') || 
+  doop[c].title.includes('La Nina') || doop[c].title.includes('La Nina') || 
+  doop[c].title.includes('remote sensing') || doop[c].title.includes('Remote sensing') || 
+  doop[c].title.includes('rainfall forecasting') || doop[c].title.includes('Rainfall forecasting') || 
+  doop[c].title.includes('atmospheric circulation') || doop[c].title.includes('Atmospheric circulation') || 
+  doop[c].title.includes('atmospheric circumstances') || doop[c].title.includes('Atmospheric circumstances') || 
+  doop[c].title.includes('NDVI'))
+                {
+                  if(count > 9)
+                  {
+                    break;
+                  }
+                  else
+                  {
+					count = count  + 1
+					console.log('count:')
+					console.log(count.toString())
+                    document.getElementById('t' + count.toString()).innerHTML = doop[c].title;
+                    document.getElementById('l' + count.toString()).href = doop[c].url;
+                    document.getElementById('i' + count.toString()).src = doop[c].urlToImage;
+                  }
+                }
+              }
+			  if(count < 10)
+			  {
+				  f4();
+			  }
+          }
+		  };
+          xhttp.open("POST", "https://stormy-plains-95999.herokuapp.com/", true);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          var str = "hi"
+          console.log(str);
+          xhttp.send('link='+str);
+        }
+		function f4()
+		{
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() 
+		  {
+			if (this.readyState == 4 && this.status == 200) 
+            {
+              var news = JSON.parse(this.responseText).message 
+              var doop = news.articles
+              var length = doop.totalResults
+              console.log(doop)
+			  console.log(doop[0])
+              var c = 0
+              for(c=0;c<doop.length;c++)
+              {
+				  console.log(doop[c].title)
+  if(doop[c].title.includes('Weather forecast') || doop[c].title.includes('weather forecast') || 
+  doop[c].title.includes('Weather') || doop[c].title.includes('weather') || 
+  doop[c].title.includes('flood risks') || doop[c].title.includes('Flood risks') || 
+  doop[c].title.includes('Floods') || doop[c].title.includes('floods') || 
+  doop[c].title.includes('reservoir') || doop[c].title.includes('Reservoirs') || 
+  doop[c].title.includes('climate change') || doop[c].title.includes('Climate change') || 
+  doop[c].title.includes('irrigation') || doop[c].title.includes('Irrigation') || 
+  doop[c].title.includes('rainfall') || doop[c].title.includes('Rainfall') || 
+  doop[c].title.includes('precipitation') || doop[c].title.includes('Precipitation') || 
+  doop[c].title.includes('Global Climate Models') || doop[c].title.includes('global climate models') || doop[c].title.includes('Global climate models') || 
+  doop[c].title.includes('greenhouse gases') || doop[c].title.includes('Greenhouse gases') || 
+  doop[c].title.includes('urban flood water management') || doop[c].title.includes('Urban flood water management') || 
+  doop[c].title.includes('Flood water management') || doop[c].title.includes('flood water management') || 
+  doop[c].title.includes('water management') || doop[c].title.includes('Water management') || 
+  doop[c].title.includes('cloud burst dam break') || doop[c].title.includes('Cloud burst dam break') || 
+  doop[c].title.includes('urban flooding') || doop[c].title.includes('Urban flooding') || 
+  doop[c].title.includes('flash floods') || doop[c].title.includes('Flash floods') || 
+  doop[c].title.includes('agricultural drought') || doop[c].title.includes('Agricultural drought') || 
+  doop[c].title.includes('flood control') || doop[c].title.includes('Flood control') || 
+  doop[c].title.includes('cloud seeding') || doop[c].title.includes('Cloud seeding') || 
+  doop[c].title.includes('El nino') || doop[c].title.includes('el nino') || 
+  doop[c].title.includes('La Nina') || doop[c].title.includes('La Nina') || 
+  doop[c].title.includes('remote sensing') || doop[c].title.includes('Remote sensing') || 
+  doop[c].title.includes('rainfall forecasting') || doop[c].title.includes('Rainfall forecasting') || 
+  doop[c].title.includes('atmospheric circulation') || doop[c].title.includes('Atmospheric circulation') || 
+  doop[c].title.includes('atmospheric circumstances') || doop[c].title.includes('Atmospheric circumstances') || 
+  doop[c].title.includes('NDVI'))
+                {
+                  if(count > 9)
+                  {
+                    break;
+                  }
+                  else
+                  {
+					count = count  + 1
+					console.log('count:')
+					console.log('t' + count.toString())
+                    document.getElementById('t' + count.toString()).innerHTML = doop[c].title;
+                    document.getElementById('l' + count.toString()).href = doop[c].url;
+                    document.getElementById('i' + count.toString()).src = doop[c].urlToImage;
+                  }
+                }
+              }
+			  if(count < 10)
+			  {
+				  f5();
+			  }
+          }
+		  };
+          xhttp.open("POST", "https://murmuring-headland-05701.herokuapp.com/", true);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          var str = "hi"
+          console.log(str);
+          xhttp.send('link='+str);
+        }
+		function f5()
+		{
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() 
+		  {
+			if (this.readyState == 4 && this.status == 200) 
+            {
+              var news = JSON.parse(this.responseText).message 
+              var doop = news.articles
+              var length = doop.totalResults
+              console.log(doop)
+			  console.log(doop[0])
+              var c = 0
+              for(c=0;c<doop.length;c++)
+              {
+				  console.log(doop[c].title)
+  if(doop[c].title.includes('Weather forecast') || doop[c].title.includes('weather forecast') ||
+  doop[c].title.includes('Weather') || doop[c].title.includes('weather') || 
+  doop[c].title.includes('flood risks') || doop[c].title.includes('Flood risks') || 
+  doop[c].title.includes('Floods') || doop[c].title.includes('floods') || 
+  doop[c].title.includes('reservoir') || doop[c].title.includes('Reservoirs') || 
+  doop[c].title.includes('climate change') || doop[c].title.includes('Climate change') || 
+  doop[c].title.includes('irrigation') || doop[c].title.includes('Irrigation') || 
+  doop[c].title.includes('rainfall') || doop[c].title.includes('Rainfall') || 
+  doop[c].title.includes('precipitation') || doop[c].title.includes('Precipitation') || 
+  doop[c].title.includes('Global Climate Models') || doop[c].title.includes('global climate models') || doop[c].title.includes('Global climate models') || 
+  doop[c].title.includes('greenhouse gases') || doop[c].title.includes('Greenhouse gases') || 
+  doop[c].title.includes('urban flood water management') || doop[c].title.includes('Urban flood water management') || 
+  doop[c].title.includes('Flood water management') || doop[c].title.includes('flood water management') || 
+  doop[c].title.includes('water management') || doop[c].title.includes('Water management') || 
+  doop[c].title.includes('cloud burst dam break') || doop[c].title.includes('Cloud burst dam break') || 
+  doop[c].title.includes('urban flooding') || doop[c].title.includes('Urban flooding') || 
+  doop[c].title.includes('flash floods') || doop[c].title.includes('Flash floods') || 
+  doop[c].title.includes('agricultural drought') || doop[c].title.includes('Agricultural drought') || 
+  doop[c].title.includes('flood control') || doop[c].title.includes('Flood control') || 
+  doop[c].title.includes('cloud seeding') || doop[c].title.includes('Cloud seeding') || 
+  doop[c].title.includes('El nino') || doop[c].title.includes('el nino') || 
+  doop[c].title.includes('La Nina') || doop[c].title.includes('La Nina') || 
+  doop[c].title.includes('remote sensing') || doop[c].title.includes('Remote sensing') || 
+  doop[c].title.includes('rainfall forecasting') || doop[c].title.includes('Rainfall forecasting') || 
+  doop[c].title.includes('atmospheric circulation') || doop[c].title.includes('Atmospheric circulation') || 
+  doop[c].title.includes('atmospheric circumstances') || doop[c].title.includes('Atmospheric circumstances') || 
+  doop[c].title.includes('NDVI'))
+                {
+                  if(count > 9)
+                  {
+                    break;
+                  }
+                  else
+                  {
+					count = count  + 1
+					console.log('count:')
+					console.log(count)  
+					document.getElementById('t' + count.toString()).innerHTML = doop[c].title;
+                    document.getElementById('l' + count.toString()).href = doop[c].url;
+                    document.getElementById('i' + count.toString()).src = doop[c].urlToImage;
+                  
+                  }
+                }
+              }
+          }
+		  };
+          xhttp.open("POST", "https://immense-hamlet-74787.herokuapp.com/", true);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          var str = "hi"
+          console.log(str);
+          xhttp.send('link='+str);
+        }
+		
+	</script>
+	<div class="cd-intro-block">
+		<div class="content-wrapper">
+			<iframe src="buttons.html" frameborder="0" style="width: 100%;height: 40rem;"></iframe>
+			<a href="#0" class='cd-btn' data-action="show-projects">News</a>
+		</div>
+	</div> 
+	<div class="cd-projects-wrapper">
+		<ul class="cd-slider">
+			<li class="current">
+				<a href="#0" id="l1">
+					<img src="img/img.png" alt="project image" id="i1">
+					<div class="project-info">
+						<h2 id="t1">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l2">
+					<img src="img/img.png" alt="project image" id="i2">
+					<div class="project-info">
+						<h2 id="t2">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l3">
+					<img src="img/img.png" alt="project image" id="i3">
+					<div class="project-info">
+						<h2 id="t3">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l4">
+					<img src="img/img.png" alt="project image" id="i4">
+					<div class="project-info">
+						<h2 id="t4">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l5">
+					<img src="img/img.png" alt="project image" id="i5">
+					<div class="project-info">
+						<h2 id="t5">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l6">
+					<img src="img/img.png" alt="project image" id="i6">
+					<div class="project-info">
+						<h2 id="t6">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l7">
+					<img src="img/img.png" alt="project image" id="i7">
+					<div class="project-info">
+						<h2 id="t7">Project 2</h2>
+					</div>
+				</a>
+			</li>
+			
+			<li>
+				<a href="#0" id="l8">
+					<img src="img/img.png" alt="project image" id="i8">
+					<div class="project-info">
+						<h2 id="t8">Project 2</h2>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#0" id="l9">
+					<img src="img/img.png" alt="project image" id="i9">
+					<div class="project-info">
+						<h2 id="t9">Project 2</h2>
+					</div>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="cd-slider-navigation cd-img-replace">
+			<li><a href="#0" class="prev inactive">Prev</a></li>
+			<li><a href="#0" class="next">Next</a></li>
+		</ul> 
+	</div> 
+
+	<div class="cd-project-content">
+		<div>
+			<h2>Project title here</h2>
+			<em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, ullam.</em>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus. 
+			</p>
+			<p>
+				Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
+			</p>
+			<p>
+				Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum. Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
+			</p>
+		</div>
+		<a href="#0" class="close cd-img-replace">Close</a>
+	</div>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+<script src="js/main.js"></script> 
+</body>
+</html>

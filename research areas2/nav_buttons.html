@@ -1,0 +1,108 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Button Hover Effect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+    body, html {
+      height: 100%;
+    }
+    
+    body {
+      font-family: "Lato", sans-serif;
+      color: #333333;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+              align-items: center;
+      align-content: center;
+      -webkit-box-pack: center;
+              justify-content: center;
+    }
+    
+    .container {
+      width: auto;
+      margin: auto;
+    }
+    
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    
+    .btn {
+      position: relative;
+      letter-spacing: 0.25em;
+      margin: 0 auto;
+      padding: 1rem 2.5rem;
+      background: transparent;
+      outline: none;
+      font-size: 1.1rem;
+      color: #333333;
+    }
+    .btn::after, .btn::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      -webkit-transform: skewX(30deg);
+              transform: skewX(30deg);
+      -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: -2;
+    }
+    .btn::before {
+      background-color: #ffff00;
+      top: -1rem;
+      left: 0rem;
+    }
+    .btn::after {
+      background-color: #8a19ff;
+      top: 1rem;
+      left: 8rem;
+    }
+    .btn:hover::before, .btn:hover::after {
+      top: 0;
+      -webkit-transform: skewx(0deg);
+              transform: skewx(0deg);
+    }
+    .btn:hover::after {
+      left: 0rem;
+    }
+    .btn:hover::before {
+      left: 8.75rem;
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    <div class="container">
+        <a class="btn" href="../home2/index.html" target="_blank">Home</a>
+        <br><br><br><br><br><br>
+        <a class="btn" href="#">Research Areas</a>
+        <br><br><br><br><br><br>
+        <a class="btn" href="#">Publications</a>
+        <br><br><br><br><br><br>
+        <a class="btn" href="#">Data</a>
+        <br><br><br><br><br><br>
+        <a class="btn" href="#">People</a>
+        <br><br><br><br><br><br>
+        <a class="btn" href="#">Contact Us</a>
+    </div>
+    
+    
+    </body></html>
